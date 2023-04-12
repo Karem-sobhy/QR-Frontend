@@ -1,13 +1,19 @@
 <script>
+import { useToast } from "vue-toastification";
 export default{
+    setup() {
+      const toast = useToast();
+      // toast("I'm an info toast!");
+    },
     data() {
         return{ 
             app : document.getElementById('app'),
-            isAuthLoading: false
+            isAuthLoading: false,
         }
     },
     mounted() {
-        this.app.classList.add('register-page')
+        this.app.classList.add('register-page');
+        
     },
     unmounted(){
         this.app.classList.remove('register-page')

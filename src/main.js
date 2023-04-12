@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 // import './assets/main.css'
 import 'admin-lte/plugins/fontawesome-free/css/all.min.css'
@@ -12,5 +14,5 @@ import 'admin-lte/dist/js/adminlte.min.js'
 const app = createApp(App)
 
 app.use(router)
-
+app.use(Toast)
 app.mount('#app')
