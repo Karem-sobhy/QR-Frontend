@@ -27,8 +27,10 @@ export default{
         this.user.setUserDetails(res.data);
         toast.success('Login Successfully');
         router.push('/')
-        } catch{
-              toast.error('Wrong Email or Password please try again');
+        } catch(err){
+            console.log(err.code);
+            if(err.code != "ERR_NETWORK")
+            toast.error('Wrong Email or Password please try again');
         }
         this.isAuthLoading=false
       },

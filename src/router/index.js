@@ -53,4 +53,11 @@ router.beforeEach((to, from, next) => {
     }
       next();
 });
+router.afterEach((to) => {
+  const user= useUserStore()
+  if (to.meta.requiresAuth) {
+    // console.log(user.token)
+    user.fetchUser();
+  }
+})
 export default router

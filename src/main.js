@@ -28,13 +28,34 @@ app.use(pinia)
 
 const userStore = useUserStore();
 
-
+apiService.interceptors.request.use(
+    (config) => {
+      const token = userStore.token;
+    //   console.log(token);
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+      return config;
+    },
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
 apiService.interceptors.response.use(
     (response) => response,
     (error) => {
-      if (error.response.status === 401) {
-        // Log the user out
         const toast = useToast()
+        // console.log(error);
+    if(error.code=='ERR_NETWORK'){
+        let errorMsg = userStore.token ? 'Someting Gone Wrong with the Connection Logging Out...' : "Can't Connect to the Endpoint";
+        
+        toast.error(errorMsg);
+        if(userStore.token)
+        userStore.logout()
+        return Promise.reject(error);
+    } 
+    if (error.response.status === 401 && userStore.token) {
+        // Log the user out
         toast.error('Token expired please login again');
         userStore.logout()
       }
