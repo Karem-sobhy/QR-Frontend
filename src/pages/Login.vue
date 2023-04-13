@@ -1,10 +1,37 @@
 <script>
+import { useToast } from "vue-toastification";
+import apiService from '../api';
+import {useUserStore} from "../store/user_store"
+import router from "../router";
 export default{
     data() {
         return{ 
             app : document.getElementById('app'),
-            isAuthLoading: false
+            isAuthLoading: false,
+            email:'',
+            password:'',
+            errors: {},
+            user: useUserStore()
         }
+    },
+    methods: {
+      async login(){
+        this.errors={}
+        this.isAuthLoading=true
+        const toast = useToast();
+        try {
+          let res = await apiService.post('login',{
+          email:this.email,
+          password:this.password,
+        });
+        this.user.setUserDetails(res.data);
+        toast.success('Login Successfully');
+        router.push('/')
+        } catch{
+              toast.error('Wrong Email or Password please try again');
+        }
+        this.isAuthLoading=false
+      },
     },
     mounted() {
         this.app.classList.add('login-page')
@@ -24,9 +51,9 @@ export default{
           <div class="card-body">
             <p class="login-box-msg">Sign in to start your session</p>
       
-            <form onsubmit="">
+            <form v-on:submit.prevent="login">
               <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email">
+                <input v-model="email" type="email" class="form-control" placeholder="Email" required>
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <span class="fas fa-envelope"></span>
@@ -34,7 +61,7 @@ export default{
                 </div>
               </div>
               <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password">
+                <input v-model="password" type="password" class="form-control" placeholder="Password" required>
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <span class="fas fa-lock"></span>

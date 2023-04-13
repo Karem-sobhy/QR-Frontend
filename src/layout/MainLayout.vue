@@ -29,10 +29,10 @@
           </li>
           <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <span>Karem Sobhy</span></a>
+                        <span>{{ user.name }}</span></a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                   <li class="user-header bg-dark h-auto ">
-                      <p class=" mt-0 ">Karem Sobhy</p>
+                      <p class=" mt-0 ">{{ user.name }}</p>
                   </li>
                   <li class="user-footer">
                       <a class="btn btn-default btn-flat float-right  btn-block " href="#">
@@ -62,7 +62,7 @@
               <img src="https://github.com/erdkse/adminlte-3-vue/raw/main/src/assets/img/default-profile.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-              <a href="#" class="d-block">Alexander Pierce</a>
+              <a href="#" class="d-block">{{ user.name }}</a>
             </div>
           </div>
     
@@ -88,11 +88,9 @@
       <!-- Main Footer -->
       <footer class="main-footer">
         <!-- To the right -->
-        <div class="float-right d-none d-sm-inline">
-          Anything you want
-        </div>
+        
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2023 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
       </footer>
     </div>
     <!-- ./wrapper -->
@@ -100,4 +98,13 @@
 
   <script>
 import { RouterLink, RouterView } from 'vue-router'
+import { useUserStore } from '../store/user_store';
+export default{
+    data(){
+        return{
+            user:useUserStore(),
+        }
+    },
+
+}
 </script>
