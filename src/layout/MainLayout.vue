@@ -9,10 +9,10 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Read QrCode</a>
+            <router-link to="" class="nav-link">Read QrCode</router-link>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">View Data</a>
+            <a class="nav-link">View Data</a>
           </li>
         </ul>
     
@@ -108,3 +108,9 @@ export default{
 
 }
 </script>
+
+<style>
+.router-link-exact-active{
+color: rgba(0,0,0,.9) !important;
+}
+</style>
