@@ -29,7 +29,7 @@ export default{
           password_confirmation:this.password_confirmation
         });
         this.user.setUserDetails(res.data);
-        toast.success('Login Successfully');
+        toast.success('Register Successfully');
         router.push('/')
         } catch (err) {
           console.log(this.user.token)
