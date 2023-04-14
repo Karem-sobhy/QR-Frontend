@@ -22,13 +22,14 @@
         <div class="row justify-content-center">
           <div class="col-12 col-md-10 col-lg-8">
             <div class="custom-file">
-                <input @change="fileChanged" type="file" class="custom-file-input" id="customFile" >
+                <qr-capture @detect="onDecode" @change="fileChanged" class="custom-file-input" id="customFile"></qr-capture>
                 <label class="custom-file-label" for="customFile">{{ file }}</label>
             </div>
             <!-- <div class="">
                 <input @change="fileChanged" type="file" >
                 <label class="custom-file-label" for="customFile">{{ file }}</label>
             </div> -->
+            
           </div>
           <!-- /.col -->
         </div>
@@ -51,7 +52,11 @@
             fileChanged(event){
                 const file = event.target.files[0];
                 this.file = file.name;
-                console.log(file);
+                // console.log(file);
+            },
+            async onDecode(promise){
+                const {content} = await promise
+                console.log(content);
             }
         },
     }

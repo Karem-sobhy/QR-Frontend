@@ -4,6 +4,7 @@ import router from './router'
 import Toast from "vue-toastification";
 import {useToast} from "vue-toastification";
 import "vue-toastification/dist/index.css";
+import QrReader from 'vue3-qr-reader';
 
 // import './assets/main.css'
 import 'admin-lte/plugins/fontawesome-free/css/all.min.css'
@@ -63,4 +64,5 @@ apiService.interceptors.response.use(
       return Promise.reject(error);
     }
   );
+  app.use(QrReader);
 app.mount('#app')
