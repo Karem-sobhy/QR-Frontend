@@ -32,6 +32,7 @@ const userStore = useUserStore();
 apiService.interceptors.request.use(
     (config) => {
       const token = userStore.token;
+      config.headers.Accept = 'application/json';
     //   console.log(token);
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
