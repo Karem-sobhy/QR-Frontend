@@ -6,7 +6,7 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu"  href="#" role="button"><i class="fas fa-bars"></i></a>
+            <a class="nav-link" data-widget="pushmenu"   role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
             <router-link to="/" class="nav-link">Read QrCode</router-link>
@@ -23,12 +23,12 @@
     
          
           <li class="nav-item">
-            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <a class="nav-link" data-widget="fullscreen"  role="button">
               <i class="fas fa-expand-arrows-alt"></i>
             </a>
           </li>
           <li class="nav-item dropdown user-menu">
-              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+              <a role="button" class="nav-link dropdown-toggle" data-toggle="dropdown">
                         <span>{{ user.name }}</span></a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                   <li class="user-header bg-dark h-auto ">
@@ -49,9 +49,9 @@
       <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
-          <img src="https://github.com/erdkse/adminlte-3-vue/raw/main/src/assets/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <a  class="brand-link">
+          <img src="../assets/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <span role="button" class="brand-text font-weight-light">AdminLTE 3</span>
         </a>
     
         <!-- Sidebar -->
@@ -59,10 +59,10 @@
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-              <img src="https://github.com/erdkse/adminlte-3-vue/raw/main/src/assets/img/default-profile.png" class="img-circle elevation-2" alt="User Image">
+              <img src="../assets/default-profile.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-              <a href="#" class="d-block">{{ user.name }}</a>
+              <a role="button" class="d-block">{{ user.name }}</a>
             </div>
           </div>
     
