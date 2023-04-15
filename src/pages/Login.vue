@@ -27,9 +27,13 @@ export default{
         this.user.setUserDetails(res.data);
         toast.success('Login Successfully');
         router.push('/')
+        
+        if(window.innerWidth >= 768 && window.innerWidth <=992)
+        document.body.classList.add('sidebar-collapse');
+        
         } catch(err){
-            console.log(err.code);
-            if(err.code != "ERR_NETWORK")
+            // console.log(err.code);
+            if(err.response.status == 401)
             toast.error('Wrong Email or Password please try again');
         }
         this.isAuthLoading=false
@@ -37,9 +41,11 @@ export default{
     },
     mounted() {
         this.app.classList.add('login-page')
-    },
-    unmounted(){
+      },
+      unmounted(){
         this.app.classList.remove('login-page')
+        // document.body.classList.remove('sidebar-mini')
+        // document.body.classList.add('sidebar-mini')
     }
     }
 </script>

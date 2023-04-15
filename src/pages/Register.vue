@@ -31,6 +31,10 @@ export default{
         this.user.setUserDetails(res.data);
         toast.success('Register Successfully');
         router.push('/')
+        
+        if(window.innerWidth >= 768 && window.innerWidth <=992)
+        document.body.classList.add('sidebar-collapse');
+
         } catch (err) {
           console.log(this.user.token)
           this.errors=err.response.data.errors
@@ -60,6 +64,8 @@ export default{
     },
     unmounted(){
         this.app.classList.remove('register-page')
+        // document.body.classList.add('sidebar-collapse')
+        // document.body.classList.remove('sidebar-collapse')
     }
     }
 </script>

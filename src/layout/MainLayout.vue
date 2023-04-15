@@ -6,13 +6,13 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            <a class="nav-link" data-widget="pushmenu"  href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <router-link to="" class="nav-link">Read QrCode</router-link>
+            <router-link to="/" class="nav-link">Read QrCode</router-link>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a class="nav-link">View Data</a>
+            <router-link to="/view" class="nav-link">View Data</router-link>
           </li>
         </ul>
     
@@ -35,7 +35,7 @@
                       <p class=" mt-0 ">{{ user.name }}</p>
                   </li>
                   <li class="user-footer">
-                      <a class="btn btn-default btn-flat float-right  btn-block " href="#">
+                      <a @click="user.logout()" class="btn btn-default btn-flat float-right  btn-block">
                         <i class="fa fa-fw fa-power-off text-red"></i>Log Out</a>
                 </li>
         
@@ -96,14 +96,20 @@
     <!-- ./wrapper -->
   </template>
 
-  <script>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
 import { useUserStore } from '../store/user_store';
+
 export default{
     data(){
         return{
             user:useUserStore(),
         }
+    },methods: {
+      mounted() {
+        console.log('mounted');
+        
+      },
     },
 
 }

@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+// import 'admin-lte/plugins/jquery/jquery.min.js'
 import Toast from "vue-toastification";
 import {useToast} from "vue-toastification";
 import "vue-toastification/dist/index.css";
@@ -9,7 +10,6 @@ import QrReader from 'vue3-qr-reader';
 // import './assets/main.css'
 import 'admin-lte/plugins/fontawesome-free/css/all.min.css'
 import 'admin-lte/dist/css/adminlte.min.css'
-import 'admin-lte/plugins/jquery/jquery.min.js'
 import 'admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js'
 import 'admin-lte/dist/js/adminlte.min.js'
 
@@ -55,12 +55,15 @@ apiService.interceptors.response.use(
         userStore.logout()
         return Promise.reject(error);
     } 
+    
+    if (error.response.status === 500) 
+        toast.error('Server Error Try again later');
+      
     if (error.response.status === 401 && userStore.token) {
         // Log the user out
         toast.error('Token expired please login again');
         userStore.logout()
       }
-  
       return Promise.reject(error);
     }
   );
