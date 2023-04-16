@@ -66,7 +66,7 @@ If the image is successfully decoded, the application attempts to parse the CSV 
 Docker
 ------
 This app can be dockerized and used with NGINX as webserver.
-the `.DockerFile` is included and i use it to run the demo server
+the `Dockerfile` is included and i use it to run the demo server
 
 Demo
 ----
