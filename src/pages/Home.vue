@@ -102,6 +102,13 @@
           </div>
           <!-- /.col -->
         </div>
+        <div v-else class="text-center" style="margin-top:5%">
+          <!-- <i class="fas fa-qrcode my-5" style="font-size: 100px; color:lightslategray;"></i> -->
+          <img src="../assets/qr-code.png" width="170" alt="">
+          <br>
+          <h1 class="text-muted my-5">Scan or select QR Code file to show data
+          </h1>
+        </div>
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->

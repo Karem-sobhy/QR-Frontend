@@ -9,7 +9,7 @@
             <a class="nav-link" data-widget="pushmenu"   role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item">
-            <router-link to="/" class="nav-link">Read QrCode</router-link>
+            <router-link to="/" class="nav-link">Read QR Code</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/view" class="nav-link">View Data</router-link>
