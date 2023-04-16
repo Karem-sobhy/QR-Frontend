@@ -5,8 +5,8 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Starter Page</h1>
+          <div class="col-sm-6 my-3">
+            <h1 class="m-0">View Data From Database</h1>
           </div>
           <!-- /.col -->
         </div>
@@ -22,10 +22,6 @@
         <div class="row justify-content-center">
           <div class="col">
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
-              </div>
-
               <div class="card-body">
                 <DataTable
                         :options="options"
@@ -69,7 +65,6 @@ import { useUserStore } from "../store/user_store";
 export default {
   data() {
     return {
-      // token:useUserStore().token,
       options: {
         processing: true,
         serverSide: true,
