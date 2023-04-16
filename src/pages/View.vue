@@ -75,7 +75,7 @@ export default {
         serverSide: true,
         autoWidth: true,
         ajax: {
-          url: "http://127.0.0.1:8000/api/view",
+          url: import.meta.env.VITE_BASE_API + "view",
           headers: { Authorization: "Bearer " + useUserStore().token },
         },
         columns: [
