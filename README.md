@@ -72,3 +72,6 @@ Demo
 ----
 
 You can view a live demo of the application at [https://qr.karemcloud.com](https://qr.karemcloud.com).
+
+
+Also there is a valid QR code file example in `qr-example` folder.
