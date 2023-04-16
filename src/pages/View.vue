@@ -66,6 +66,7 @@ export default {
   data() {
     return {
       options: {
+        scrollX: true,
         processing: true,
         serverSide: true,
         autoWidth: true,
