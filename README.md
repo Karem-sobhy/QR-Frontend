@@ -18,6 +18,7 @@ Technologies used
 -----------------
 
 *   Vue3
+*   Vue Router
 *   Pinia
 *   Axios
 *   AdminLTE
