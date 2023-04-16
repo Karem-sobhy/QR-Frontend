@@ -8,10 +8,10 @@
           <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu"   role="button"><i class="fas fa-bars"></i></a>
           </li>
-          <li class="nav-item d-none d-sm-inline-block">
+          <li class="nav-item">
             <router-link to="/" class="nav-link">Read QrCode</router-link>
           </li>
-          <li class="nav-item d-none d-sm-inline-block">
+          <li class="nav-item">
             <router-link to="/view" class="nav-link">View Data</router-link>
           </li>
         </ul>
