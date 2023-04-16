@@ -33,7 +33,8 @@ export default{
         
         } catch(err){
             // console.log(err.code);
-            if(err.response.status == 401)
+            // this.isAuthLoading=false
+            if(err.response  && err.response.status == 401)
             toast.error('Wrong Email or Password please try again');
         }
         this.isAuthLoading=false

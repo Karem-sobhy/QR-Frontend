@@ -50,7 +50,6 @@ apiService.interceptors.response.use(
         // console.log(error);
     if(error.code=='ERR_NETWORK'){
         let errorMsg = userStore.token ? 'Someting Gone Wrong with the Connection Logging Out...' : "Can't Connect to the Endpoint";
-        
         toast.error(errorMsg);
         if(userStore.token)
         userStore.logout()

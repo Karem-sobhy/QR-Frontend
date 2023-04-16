@@ -36,8 +36,10 @@ export default{
         document.body.classList.add('sidebar-collapse');
 
         } catch (err) {
-          console.log(this.user.token)
-          this.errors=err.response.data.errors
+
+          // console.log(this.user.token)
+          if(err.response){
+            this.errors=err.response.data.errors
           if(this.errors.password){
             this.errors.password.forEach(error => {
               
@@ -55,6 +57,7 @@ export default{
             });
           }
         }
+          }
         this.isAuthLoading=false
       },
     },
