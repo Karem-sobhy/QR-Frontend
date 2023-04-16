@@ -27,7 +27,7 @@
                 :key="qr"
                 @change="fileChanged"
                 v-bind:disabled="fileName != 'Choose file'"
-                :capture=false
+                
                 :multiple="false"
                 class="custom-file-input my-5"
                 id="customFile"
